@@ -1,0 +1,47 @@
+import React from 'react';
+import person from '../assets/PersonalData';
+
+const About = ()=>{
+    return(
+        <div className="container-fluid padding" id="about">
+            <div className="row headers padding">
+                <div className="col-12 text-center ">
+                     <h1 className="display-4 animated wow slideInLeft">About Me</h1>
+                </div>
+                <hr />
+                <div className="col-xs-12 col-sm-12 col-md-4 padding">
+                    <figure class="figure">
+                    <img src="https://images.unsplash.com/photo-1497899236524-c79659901d7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" width="100%" alt="profile" className="rounded-circle"/>            
+                        <figcaption className="figure-caption text-center p-3">{person.about.name}</figcaption>
+                    </figure>
+                </div>
+                <div className="col-xs-12 col-sm-12 col-md-8">
+                    <ul>
+                        {person.background.map((bg,index)=>(
+                            <li key={index} className="lead">{`${bg.experience} `} 
+                                <a href={bg.url} target="_blank" rel="noopener noreferrer" className="education">
+                                    {bg.school}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>     
+                </div>
+            </div>
+            <div className="row">
+              <div className="container">
+                <div className="row jumbotron">
+                    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-9">  
+                        <p className="lead">
+                            I am currently looking for MERN (MongoDB, Express, React and Node) Stack development Internship.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <hr className="my-4"/>
+        </div>
+    )
+
+};
+
+export default About;
